@@ -31,6 +31,6 @@
 //        System.out.println(name);
 //        BoardDto boardDto = boardService.createBoard(title, content, name);
 //        System.out.println(boardDto);
-//        return "/create-view";
+//        return "redirect:/create-view";
 //    }
 //}
