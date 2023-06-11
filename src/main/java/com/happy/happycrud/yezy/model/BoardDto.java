@@ -8,4 +8,11 @@ public class BoardDto {
 
     public BoardDto() {
     }
+
+    public BoardDto(Long id, String title, String content, String name) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.name = name;
+    }
 }
