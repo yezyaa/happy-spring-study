@@ -18,4 +18,8 @@
 //        return boardDto;
 //    }
 //
+//    public List<BoardDto> readBoardAll() {
+//        return boardList;
+//    }
+//
 //}

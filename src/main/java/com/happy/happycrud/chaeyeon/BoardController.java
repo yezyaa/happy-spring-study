@@ -2,6 +2,7 @@
 //
 //import com.happy.happycrud.chaeyeon.model.BoardDto;
 //import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,6 @@
 //        return "create";
 //    }
 //
-//
 //    @PostMapping("/create")
 //    public String create(
 //        @RequestParam("title") String title,
@@ -31,6 +31,12 @@
 //        System.out.println(name);
 //        BoardDto boardDto = boardService.createBoard(title, content, name);
 //        System.out.println(boardDto);
-//        return "redirect:/create-view";
+//        return "redirect:/home";
+//    }
+//
+//    @GetMapping("/home")
+//    public String index(Model model) {
+//        model.addAttribute("boardList", boardService.readBoardAll());
+//        return "home";
 //    }
 //}
