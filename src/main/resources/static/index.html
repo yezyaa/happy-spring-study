@@ -20,22 +20,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>첫 번째 게시글</td>
-                    <td>작성자1</td>
+                <p th:if="${boradList.isEmpty()}">등록된 게시글이 없습니다.</p>
+                <tr th:unless="${boradList.isEmpty()}" th:each="board: ${boardList}">
+                    <td>[[${board.id}]]</td>
+                    <td>[[${board.title}]]</td>
+                    <td>[[${board.content}]]</td>
+                    <td>[[${board.name}]]</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>두 번째 게시글</td>
-                    <td>작성자2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>세 번째 게시글</td>
-                    <td>작성자3</td>
-                </tr>
-                <!-- 추가적인 게시물 목록은 여기에 추가 -->
                 </tbody>
             </table>
             <div class="pagination">
@@ -46,7 +37,7 @@
                 <span class="page-link"> &gt; </span>
             </div>
             <div class="button-container">
-                <a href="#" class="btn-write">글쓰기</a>
+                <a th:href="@{/create-view}" class="btn-write">글쓰기</a>
             </div>
         </div>
     </div>

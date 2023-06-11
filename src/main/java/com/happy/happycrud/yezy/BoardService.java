@@ -17,4 +17,9 @@ public class BoardService {
         boardList.add(newBoard);
         return newBoard;
     }
+
+    // BoardService에 모든 게시글을 반환하는 메소드
+    public List<BoardDto> readBoradAll() {
+        return boardList;
+    }
 }
