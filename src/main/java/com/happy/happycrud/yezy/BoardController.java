@@ -2,6 +2,7 @@ package com.happy.happycrud.yezy;
 
 import com.happy.happycrud.yezy.model.BoardDto;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,13 @@ public class BoardController {
         System.out.println(name);
         BoardDto newBoard = boardService.createBoard(title, content, name);
         System.out.println(newBoard);
-        return "redirect:/create-view";
+//        return "redirect:/create-view";
+        return "redirect:/home"; // 생성 후 홈으로
+    }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("boardList", boardService.readBoradAll());
+        return "/home";
     }
 }
