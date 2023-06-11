@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="board.css">
+    <title>Happy</title>
 </head>
 <body>
-Hi
+    <div class="container">
+        <div class="content">
+            <h1 class="title">게시판</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>첫 번째 게시글</td>
+                    <td>작성자1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>두 번째 게시글</td>
+                    <td>작성자2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>세 번째 게시글</td>
+                    <td>작성자3</td>
+                </tr>
+                <!-- 추가적인 게시물 목록은 여기에 추가 -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span class="page-link"> &lt; </span>
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+                <span class="page-link"> &gt; </span>
+            </div>
+            <div class="button-container">
+                <a href="#" class="btn-write">글쓰기</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
