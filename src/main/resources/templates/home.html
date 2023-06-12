@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="/css/board.css">
-  <title>Happy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/board.css">
+    <title>Happy</title>
 </head>
 <body>
 <div class="container">
-  <div class="content">
-    <h1 class="title">게시판</h1>
-    <table>
-      <thead>
-      <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>내용</th>
-        <th>작성자</th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr th:if="${boardList.isEmpty()}">
-          <td>
-            <p>
-              등록된 게시글이 없습니다.
-            </p>
-          </td>
-        </tr>
-        <tr th:unless="${boardList.isEmpty()}" th:each="board: ${boardList}">
-          <td>[[${board.getId}]]</td>
-          <td> <a th:href="@{/{id} (id=${board.getId})}"> [[${board.getTitle}]] </a> </td>
-          <td>[[${board.getContent}]]</td>
-          <td>[[${board.getName}]]</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="pagination">
-      <span class="page-link"> &lt; </span>
-      <span class="page-number">1</span>
-      <span class="page-number">2</span>
-      <span class="page-number">3</span>
-      <span class="page-link"> &gt; </span>
+    <div class="content">
+        <h1 class="title">게시판</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${boardList.isEmpty()}">
+                <td>
+                    <p>
+                        등록된 게시글이 없습니다.
+                    </p>
+                </td>
+            </tr>
+            <tr th:unless="${boardList.isEmpty()}" th:each="board: ${boardList}">
+                <td>[[${board.getId}]]</td>
+                <td><a th:href="@{/{id}(id=${board.getId})}">[[${board.getTitle}]]</a></td> <!-- 링크를 id값으로 넘겨주기 때문에 id로 써야함 -->
+                <td><a th:href="@{/{id}(id=${board.getId})}">[[${board.getContent}]]</a></td>
+                <td>[[${board.getName}]]</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span class="page-link"> &lt; </span>
+            <span class="page-number">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            <span class="page-link"> &gt; </span>
+        </div>
+        <div class="button-container">
+            <a th:href="@{/create-view}" class="btn-write">글쓰기</a>
+        </div>
     </div>
-    <div class="button-container">
-      <a th:href="@{/create-view}" class="btn-write">글쓰기</a>
-    </div>
-  </div>
 </div>
 </body>
 </html>
