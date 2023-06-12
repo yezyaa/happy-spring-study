@@ -22,4 +22,12 @@
 //        return boardList;
 //    }
 //
+//    public BoardDto readBoard(Long id) {
+//        for (BoardDto boardDto : boardList){
+//            if (boardDto.getId().equals(id)) {
+//                return boardDto;
+//            }
+//        }
+//        return null;
+//    }
 //}

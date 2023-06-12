@@ -30,7 +30,7 @@
         </tr>
         <tr th:unless="${boardList.isEmpty()}" th:each="board: ${boardList}">
           <td>[[${board.getId}]]</td>
-          <td>[[${board.getTitle}]]</td>
+          <td> <a th:href="@{/{id} (id=${board.getId})}"> [[${board.getTitle}]] </a> </td>
           <td>[[${board.getContent}]]</td>
           <td>[[${board.getName}]]</td>
         </tr>
