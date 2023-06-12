@@ -18,8 +18,19 @@ public class BoardService {
         return newBoard;
     }
 
-    // BoardService에 모든 게시글을 반환하는 메소드
+    // BoardService에서 모든 게시글을 반환하는 메소드 -> readAll
     public List<BoardDto> readBoradAll() {
         return boardList;
+    }
+
+    // BoardService에서 하나의 BoardDto를 반환하는 메소드 -> readOne
+    // 찾는 기준: id
+    public BoardDto readBoard(Long id) {
+        for (BoardDto boardDto: boardList) {
+            if (boardDto.getId().equals(id)) {
+                return boardDto;
+            }
+        }
+        return null;
     }
 }
