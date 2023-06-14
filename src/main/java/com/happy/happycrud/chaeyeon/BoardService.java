@@ -30,4 +30,22 @@
 //        }
 //        return null;
 //    }
+//
+//    public BoardDto updateBoard(Long id, String title, String content) {
+//        int target = -1;
+//        for (int i = 0; i < boardList.size(); i++) {
+//            if (boardList.get(i).getId().equals(id)) {
+//                target = i;
+//                break;
+//            }
+//        }
+//        if (target != -1) {
+//            boardList.get(target).setTitle(title);
+//            boardList.get(target).setContent(content);
+//            return boardList.get(target);
+//        }
+//        else return null;
+//    }
+//
+//
 //}
