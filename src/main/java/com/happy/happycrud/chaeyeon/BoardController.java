@@ -23,9 +23,9 @@
 //
 //    @PostMapping("/create")
 //    public String create(
-//        @RequestParam("title") String title,
-//        @RequestParam("content") String content,
-//        @RequestParam("name") String name
+//            @RequestParam("title") String title,
+//            @RequestParam("content") String content,
+//            @RequestParam("name") String name
 //    ) {
 //        System.out.println(title);
 //        System.out.println(content);
@@ -46,5 +46,21 @@
 //        BoardDto dto = boardService.readBoard(id);
 //        model.addAttribute("board", dto);
 //        return "read";
+//    }
+//
+//    @GetMapping("/{id}/update-view")
+//    public String updateView(@PathVariable("id") Long id, Model model) {
+//        BoardDto dto = boardService.readBoard(id);
+//        model.addAttribute("board", dto);
+//        return "update";
+//    }
+//
+//    @PostMapping("/{id}/update")
+//    public String update(
+//            @PathVariable("id") Long id,
+//            @RequestParam("title") String title,
+//            @RequestParam("content") String content) {
+//        BoardDto boardDto = boardService.updateBoard(id, title, content);
+//        return "redirect:/{id}";
 //    }
 //}
