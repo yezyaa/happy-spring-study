@@ -64,4 +64,17 @@ public class BoardController {
         return String.format("redirect:/%s", id);
 //        return "redirect:/id"; // 상세페이지로
     }
+
+    @GetMapping("/{id}/delete-view")
+    public String deleteView(@PathVariable("id") Long id, Model model) {
+        BoardDto dto = boardService.readBoard(id);
+        model.addAttribute("board", dto);
+        return "delete";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable("id") Long id) {
+        boardService.deleteBoard(id);
+        return "redirect:/home";
+    }
 }
