@@ -47,5 +47,20 @@
 //        else return null;
 //    }
 //
+//    public boolean deleteBoard(Long id) {
+//        int target = -1;
+//        for (int i = 0; i < boardList.size(); i++) {
+//            if (boardList.get(i).getId().equals(id)) {
+//                target = i;
+//                break;
+//            }
+//        }
+//        if (target != -1) {
+//            boardList.remove(target);
+//            return true;
+//        }
+//        return false;
+//    }
+//
 //
 //}
