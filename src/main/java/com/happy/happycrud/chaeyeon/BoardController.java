@@ -4,6 +4,7 @@
 //import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 //
@@ -38,5 +39,12 @@
 //    public String index(Model model) {
 //        model.addAttribute("boardList", boardService.readBoardAll());
 //        return "home";
+//    }
+//
+//    @GetMapping("/{id}")
+//    public String readOne(@PathVariable("id") Long id, Model model) {
+//        BoardDto dto = boardService.readBoard(id);
+//        model.addAttribute("board", dto);
+//        return "read";
 //    }
 //}
