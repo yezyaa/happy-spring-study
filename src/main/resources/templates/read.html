@@ -11,5 +11,7 @@
     <p>작성자: [[${board.name}]]</p>
     <p>내용: [[${board.content}]]</p>
     <a href="/home">Back</a>
+    <a th:href="@{/{id}/update-view(id=${board.id})}">수정하기</a>
+    <a th:href="@{/{id}/delete-view(id=${board.id})}">삭제하기</a>
 </body>
 </html>
