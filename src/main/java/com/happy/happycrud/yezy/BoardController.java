@@ -47,4 +47,21 @@ public class BoardController {
         model.addAttribute("board", dto);
         return "/read";
     }
+
+    @GetMapping("/{id}/update-view")
+    public String updateView(@PathVariable("id") Long id, Model model) {
+        BoardDto dto = boardService.readBoard(id);
+        model.addAttribute("board", dto);
+        return "update";
+    }
+
+    @PostMapping("/{id}/update")
+    public String update(
+            @PathVariable("id") Long id,
+            @RequestParam("title") String title,
+            @RequestParam("content") String content) {
+        BoardDto boardDto = boardService.updateBoard(id, title, content);
+        return String.format("redirect:/%s", id);
+//        return "redirect:/id"; // 상세페이지로
+    }
 }
