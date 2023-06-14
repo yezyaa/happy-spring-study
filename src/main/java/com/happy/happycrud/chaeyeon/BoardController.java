@@ -63,4 +63,17 @@
 //        BoardDto boardDto = boardService.updateBoard(id, title, content);
 //        return "redirect:/{id}";
 //    }
+//
+//    @GetMapping("/{id}/delete-view")
+//    public String deleteView(@PathVariable("id") Long id, Model model) {
+//        BoardDto dto = boardService.readBoard(id);
+//        model.addAttribute("board", dto);
+//        return "delete";
+//    }
+//
+//    @PostMapping("/{id}/delete")
+//    public String delete(@PathVariable("id") Long id) {
+//        boardService.deleteBoard(id);
+//        return "redirect:/home";
+//    }
 //}
