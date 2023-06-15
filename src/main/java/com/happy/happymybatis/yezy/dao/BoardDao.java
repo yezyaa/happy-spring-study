@@ -9,16 +9,30 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class StudentDao {
+public class BoardDao {
     private final SqlSessionFactory sessionFactory;
-    public StudentDao(SqlSessionFactory sessionFactory) {
+    public BoardDao(SqlSessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-    public List<Board> readStudentsAll() {
+    public void createBoard(Board board) {
+        try (SqlSession session = sessionFactory.openSession()) {
+            BoardMapper boardMapper = session.getMapper(BoardMapper.class);
+            boardMapper.insertBoard(board);
+        }
+    }
+
+    public List<Board> readBoardAll() {
         try (SqlSession session = sessionFactory.openSession()) {
             BoardMapper boardMapper = session.getMapper(BoardMapper.class);
             return boardMapper.selectBoardAll();
+        }
+    }
+
+    public Board readBoard(Long id) {
+        try (SqlSession session = sessionFactory.openSession()) {
+            BoardMapper boardMapper = session.getMapper(BoardMapper.class);
+            return boardMapper.selectBoard(id);
         }
     }
 }
