@@ -6,7 +6,7 @@ spring:
 #    password: password
 
 mybatis:
-  mapper-locations: "classpath:yezy/happymybatis/mappers/*.xml"
+  mapper-locations: "classpath:mybatis/mappers/*.xml"
   type-aliases-package: "com.happy.happymybatis.yezy.model"
   configuration:
     map-underscore-to-camel-case: true

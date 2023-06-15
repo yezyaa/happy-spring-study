@@ -1,8 +1,8 @@
 //package com.happy.happymybatis.chaeyeon.dao;
 //
 //import com.happy.happymybatis.chaeyeon.mapper.BoardMapper;
+//import com.happy.happymybatis.chaeyeon.mapper.BoardMapperX;
 //import com.happy.happymybatis.chaeyeon.model.Board;
-//import com.happy.happymybatis.yezy.mapper.BoardMapper;
 //import org.apache.ibatis.session.SqlSession;
 //import org.apache.ibatis.session.SqlSessionFactory;
 //import org.springframework.stereotype.Repository;
@@ -36,6 +36,13 @@
 //        try (SqlSession session = sessionFactory.openSession()) {
 //            BoardMapper boardMapper = session.getMapper(BoardMapper.class);
 //            return boardMapper.selectBoard(id);
+//        }
+//    }
+//
+//    public List<Board> readAllXml() {
+//        try (SqlSession session = sessionFactory.openSession()) {
+//            BoardMapperX boardMapper = session.getMapper(BoardMapperX.class);
+//            return boardMapper.selectBoardAll();
 //        }
 //    }
 //}
