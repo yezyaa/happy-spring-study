@@ -1,6 +1,7 @@
 package com.happy.happymybatis.yezy.dao;
 
 import com.happy.happymybatis.yezy.mapper.BoardMapper;
+import com.happy.happymybatis.yezy.mapper.BoardXmlMapper;
 import com.happy.happymybatis.yezy.model.Board;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -33,6 +34,13 @@ public class BoardDao {
         try (SqlSession session = sessionFactory.openSession()) {
             BoardMapper boardMapper = session.getMapper(BoardMapper.class);
             return boardMapper.selectBoard(id);
+        }
+    }
+
+    public List<Board> readAllXml() {
+        try (SqlSession session = sessionFactory.openSession()) {
+            BoardXmlMapper boardMapper = session.getMapper(BoardXmlMapper.class);
+            return boardMapper.selectBoardAll();
         }
     }
 }
