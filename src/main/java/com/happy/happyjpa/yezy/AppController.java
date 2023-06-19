@@ -1,8 +1,11 @@
 package com.happy.happyjpa.yezy;
 
+import com.happy.happyjpa.yezy.entities.BoardEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 //@RestController // 모든 메소드에 @ResponseBody를 붙이는 요소
@@ -32,5 +35,21 @@ public class AppController {
     public String home(Model model) {
         model.addAttribute("boardList", this.service.readBoardAll());
         return "/home";
+    }
+
+    @GetMapping("/{id}/update-view")
+    public String updateView(@PathVariable("id") Long id, Model model) {
+        BoardEntity entity = this.service.readBoard(id);
+        model.addAttribute("board", entity);
+        return "/update";
+    }
+
+    @PostMapping("/{id}/update")
+    public String update(
+            @PathVariable("id") Long id,
+            @RequestParam("title") String title,
+            @RequestParam("content") String content) {
+        this.service.updateBoard(id, title, content); // DB 저장 역할
+        return "redirect:/home"; // 생성 후 홈으로
     }
 }
