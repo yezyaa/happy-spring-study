@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[[${board.title}]]</title>
+</head>
+<body>
+<h1>글 상세보기</h1>
+<p>글 번호: [[${board.id}]]</p>
+<p>글 제목: [[${board.title}]]</p>
+<p>작성자: [[${board.name}]]</p>
+<p>내용: [[${board.content}]]</p>
+<a href="/home">Back</a>
+<a th:href="@{/{id}/update-view(id=${board.id})}">수정하기</a>
+<a th:href="@{/{id}/delete-view(id=${board.id})}">삭제하기</a>
+</body>
+</html>
