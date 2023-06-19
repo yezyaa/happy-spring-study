@@ -1,57 +1,57 @@
-package com.happy.happyjpa.yezy;
-
-import com.happy.happyjpa.yezy.entities.BoardEntity;
-import com.happy.happyjpa.yezy.repos.BoardRepository;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-
-@Service
-public class AppService {
-    // JpaRepository
-    private final BoardRepository repository;
-
-    public AppService(BoardRepository repository) {
-        this.repository = repository;
-    }
-
-    // CREATE
-    public void createBoard(String title, String content, String name) {
-        BoardEntity newBoard = new BoardEntity();
-        newBoard.setTitle(title);
-        newBoard.setContent(content);
-        newBoard.setName(name);
-        repository.save(newBoard);
-    }
-
-    // READ
-    public BoardEntity readBoard(Long id) {
-        Optional<BoardEntity> entity = repository.findById(id);
-        if (entity.isPresent()) {
-            return entity.get();
-        } else {
-          return null;
-        }
-    }
-
-    // READALL
-    public List<BoardEntity> readBoardAll() {
-        return repository.findAll();
-    }
-
-    // UPDATE
-    public void updateBoard(Long id, String title, String content) {
-        BoardEntity targetEntity = repository.findById(id).orElse(new BoardEntity());
-        targetEntity.setTitle(title);
-        targetEntity.setContent(content);
-        targetEntity = repository.save(targetEntity);
-        System.out.println(targetEntity);
-    }
-
-    // DELETE
-    public void deleteBoard(Long id) {
-        BoardEntity targetEntity = repository.findById(id).orElse(new BoardEntity());
-        repository.delete(targetEntity);
-    }
-}
+//package com.happy.happyjpa.yezy;
+//
+//import com.happy.happyjpa.yezy.entities.BoardEntity;
+//import com.happy.happyjpa.yezy.repos.BoardRepository;
+//import org.springframework.stereotype.Service;
+//
+//import java.util.List;
+//import java.util.Optional;
+//
+//@Service
+//public class AppService {
+//    // JpaRepository
+//    private final BoardRepository repository;
+//
+//    public AppService(BoardRepository repository) {
+//        this.repository = repository;
+//    }
+//
+//    // CREATE
+//    public void createBoard(String title, String content, String name) {
+//        BoardEntity newBoard = new BoardEntity();
+//        newBoard.setTitle(title);
+//        newBoard.setContent(content);
+//        newBoard.setName(name);
+//        repository.save(newBoard);
+//    }
+//
+//    // READ
+//    public BoardEntity readBoard(Long id) {
+//        Optional<BoardEntity> entity = repository.findById(id);
+//        if (entity.isPresent()) {
+//            return entity.get();
+//        } else {
+//          return null;
+//        }
+//    }
+//
+//    // READALL
+//    public List<BoardEntity> readBoardAll() {
+//        return repository.findAll();
+//    }
+//
+//    // UPDATE
+//    public void updateBoard(Long id, String title, String content) {
+//        BoardEntity targetEntity = repository.findById(id).orElse(new BoardEntity());
+//        targetEntity.setTitle(title);
+//        targetEntity.setContent(content);
+//        targetEntity = repository.save(targetEntity);
+//        System.out.println(targetEntity);
+//    }
+//
+//    // DELETE
+//    public void deleteBoard(Long id) {
+//        BoardEntity targetEntity = repository.findById(id).orElse(new BoardEntity());
+//        repository.delete(targetEntity);
+//    }
+//}
