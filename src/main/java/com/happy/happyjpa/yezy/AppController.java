@@ -37,6 +37,13 @@ public class AppController {
         return "/home";
     }
 
+    @GetMapping("/{id}")
+    public String readOne(@PathVariable("id") Long id, Model model) {
+        BoardEntity entity = this.service.readBoard(id);
+        model.addAttribute("board", entity);
+        return "/read";
+    }
+
     @GetMapping("/{id}/update-view")
     public String updateView(@PathVariable("id") Long id, Model model) {
         BoardEntity entity = this.service.readBoard(id);
@@ -51,5 +58,18 @@ public class AppController {
             @RequestParam("content") String content) {
         this.service.updateBoard(id, title, content); // DB 저장 역할
         return "redirect:/home"; // 생성 후 홈으로
+    }
+
+    @GetMapping("/{id}/delete-view")
+    public String deleteView(@PathVariable("id") Long id, Model model) {
+        BoardEntity entity = this.service.readBoard(id);
+        model.addAttribute("board", entity);
+        return "/delete";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable("id") Long id) {
+        this.service.deleteBoard(id);
+        return "redirect:/home";
     }
 }
