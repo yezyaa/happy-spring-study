@@ -5,11 +5,13 @@
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.*;
 //
+//import java.util.List;
 //import java.util.Optional;
 //
 //@Controller
-////@RestController
+////@RestController // 모든 메소드에 @ResponseBody를 붙이는 요소
 //public class AppController {
+//    // 사용자의 입력을 직접적으로 받는 요소
 //    private final AppService service;
 //
 //    public AppController(AppService service) {
@@ -25,17 +27,14 @@
 //    public String create(
 //            @RequestParam("title") String title,
 //            @RequestParam("content") String content,
-//            @RequestParam("name") String name
-//    ) {
-//        this.service.craeteBoard(title, content, name);
-////        this.service.craeteBoard();
-//        return "redirect:/home";
+//            @RequestParam("name") String name) {
+//        this.service.createBoard(title, content, name); // DB 저장 역할
+//        return "redirect:/home"; // 생성 후 홈으로
 //    }
 //
 //    @GetMapping("/home")
-//    public String home(Model model) {
-//        model.addAttribute("boardList", this.service.readBoardAll());
-//        return "/home";
+//    public @ResponseBody List<BoardEntity> home() {
+//        return this.service.readBoardAll();
 //    }
 //
 //    @GetMapping("/{id}")
@@ -56,17 +55,16 @@
 //    public String update(
 //            @PathVariable("id") Long id,
 //            @RequestParam("title") String title,
-//            @RequestParam("content") String content
-//    ) {
-//        this.service.updateBoard(id, title, content);
-//        return "redirect:/home";
+//            @RequestParam("content") String content) {
+//        this.service.updateBoard(id, title, content); // DB 저장 역할
+//        return "redirect:/home"; // 생성 후 홈으로
 //    }
 //
 //    @GetMapping("/{id}/delete-view")
 //    public String deleteView(@PathVariable("id") Long id, Model model) {
 //        BoardEntity entity = this.service.readBoard(id);
 //        model.addAttribute("board", entity);
-//        return "delete";
+//        return "/delete";
 //    }
 //
 //    @PostMapping("/{id}/delete")
@@ -77,7 +75,7 @@
 //
 //    @GetMapping("find")
 //    public @ResponseBody String find() {
-//        this.service.orderByIdDesc();
+//        this.service.findAllByTest();
 //        return "done-find";
 //    }
 //}
