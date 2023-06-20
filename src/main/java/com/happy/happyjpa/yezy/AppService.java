@@ -54,4 +54,14 @@ public class AppService {
         BoardEntity targetEntity = repository.findById(id).orElse(new BoardEntity());
         repository.delete(targetEntity);
     }
+
+    // findAllBy
+    public void findAllByTest() {
+        System.out.println("findAllByOrderByIdDesc");
+        List<BoardEntity> boardEntities = this.repository.findAllByOrderByIdDesc();
+        for (int i = 0; i < 5; i++) {
+            System.out.println(boardEntities.get(i));
+        }
+        System.out.println("...");
+    }
 }

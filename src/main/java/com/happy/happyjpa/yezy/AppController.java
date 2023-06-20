@@ -72,4 +72,10 @@ public class AppController {
         this.service.deleteBoard(id);
         return "redirect:/home";
     }
+
+    @GetMapping("find")
+    public @ResponseBody String find() {
+        this.service.findAllByTest();
+        return "done-find";
+    }
 }
