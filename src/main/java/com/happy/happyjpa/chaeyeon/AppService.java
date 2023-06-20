@@ -50,4 +50,12 @@
 //                repository.findById(id).orElse(new BoardEntity());
 //        repository.delete(targetEntity);
 //    }
+//
+//    public void orderByIdDesc() {
+//        List<BoardEntity> boardEntities =
+//                this.repository.findAllByOrderIdDesc();
+//        for (int i = 0; i < 5; i++) {
+//            System.out.println(boardEntities.get(i));
+//        }
+//    }
 //}

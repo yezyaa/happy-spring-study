@@ -74,4 +74,10 @@
 //        this.service.deleteBoard(id);
 //        return "redirect:/home";
 //    }
+//
+//    @GetMapping("find")
+//    public @ResponseBody String find() {
+//        this.service.orderByIdDesc();
+//        return "done-find";
+//    }
 //}
