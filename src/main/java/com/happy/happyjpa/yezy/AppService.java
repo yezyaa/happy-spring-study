@@ -36,9 +36,9 @@ public class AppService {
     }
 
     // READALL
-    public List<BoardEntity> readBoardAll() {
-        return repository.findAll();
-    }
+//    public List<BoardEntity> readBoardAll() {
+//        return repository.findAll();
+//    }
 
     // UPDATE
     public void updateBoard(Long id, String title, String content) {
@@ -63,5 +63,10 @@ public class AppService {
             System.out.println(boardEntities.get(i));
         }
         System.out.println("...");
+    }
+
+    // @ResponseBody로 return
+    public List<BoardEntity> readStudentAll() {
+        return this.repository.findAll();
     }
 }
