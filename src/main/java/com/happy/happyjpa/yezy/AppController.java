@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -31,11 +32,11 @@ public class AppController {
         return "redirect:/home"; // 생성 후 홈으로
     }
 
-    @GetMapping("/home")
-    public String home(Model model) {
-        model.addAttribute("boardList", this.service.readBoardAll());
-        return "/home";
-    }
+//    @GetMapping("/home")
+//    public String home(Model model) {
+//        model.addAttribute("boardList", this.service.readBoardAll());
+//        return "/home";
+//    }
 
     @GetMapping("/{id}")
     public String readOne(@PathVariable("id") Long id, Model model) {
@@ -77,5 +78,11 @@ public class AppController {
     public @ResponseBody String find() {
         this.service.findAllByTest();
         return "done-find";
+    }
+
+    // @ResponseBody로 return
+    @GetMapping("/home")
+    public @ResponseBody List<BoardEntity> readAll() {
+        return this.service.readStudentAll();
     }
 }
