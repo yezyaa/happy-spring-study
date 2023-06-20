@@ -1,5 +1,6 @@
 package com.happy.happyjpa.yezy;
 
+import com.happy.happyjpa.yezy.dto.BoardDto;
 import com.happy.happyjpa.yezy.entities.BoardEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -81,8 +82,13 @@ public class AppController {
     }
 
     // @ResponseBody로 return
+//    @GetMapping("/home")
+//    public @ResponseBody List<BoardEntity> readAll() {
+//        return this.service.readBoardAll();
+//    }
+
     @GetMapping("/home")
-    public @ResponseBody List<BoardEntity> readAll() {
-        return this.service.readStudentAll();
+    public @ResponseBody List<BoardDto> home() {
+        return this.service.readBoardAll();
     }
 }

@@ -1,9 +1,11 @@
 package com.happy.happyjpa.yezy;
 
+import com.happy.happyjpa.yezy.dto.BoardDto;
 import com.happy.happyjpa.yezy.entities.BoardEntity;
 import com.happy.happyjpa.yezy.repos.BoardRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,7 +68,17 @@ public class AppService {
     }
 
     // @ResponseBody로 return
-    public List<BoardEntity> readStudentAll() {
-        return this.repository.findAll();
+//    public List<BoardEntity> readBoardAll() {
+//        return this.repository.findAll();
+//    }
+
+    public List<BoardDto> readBoardAll() {
+        List<BoardDto> boardDtoList = new ArrayList<>();
+        for (BoardEntity boardEntity:
+                this.repository.findAll()) {
+
+            boardDtoList.add(BoardDto.fromEntity(boardEntity));
+        }
+        return boardDtoList;
     }
 }
