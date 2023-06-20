@@ -1,5 +1,6 @@
 //package com.happy.happyjpa.chaeyeon;
 //
+//import com.happy.happyjpa.chaeyeon.dto.BoardDto;
 //import com.happy.happyjpa.chaeyeon.entities.BoardEntity;
 //import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
@@ -33,7 +34,7 @@
 //    }
 //
 //    @GetMapping("/home")
-//    public @ResponseBody List<BoardEntity> home() {
+//    public @ResponseBody List<BoardDto> home() {
 //        return this.service.readBoardAll();
 //    }
 //

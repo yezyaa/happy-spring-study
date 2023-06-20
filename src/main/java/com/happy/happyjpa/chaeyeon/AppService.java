@@ -1,8 +1,10 @@
 //package com.happy.happyjpa.chaeyeon;
+//import com.happy.happyjpa.chaeyeon.dto.BoardDto;
 //import com.happy.happyjpa.chaeyeon.entities.BoardEntity;
 //import com.happy.happyjpa.chaeyeon.repos.BoardRepository;
 //import org.springframework.stereotype.Service;
 //
+//import java.util.ArrayList;
 //import java.util.List;
 //import java.util.Optional;
 //
@@ -35,8 +37,12 @@
 //    }
 //
 //    // READALL
-//    public List<BoardEntity> readBoardAll() {
-//        return this.repository.findAll();
+//    public List<BoardDto> readBoardAll() {
+//        List<BoardDto> boardDtoList = new ArrayList<>();
+//        for (BoardEntity boardEntity : this.repository.findAll()) {
+//            boardDtoList.add(BoardDto.fromEntity(boardEntity));
+//        }
+//        return boardDtoList;
 //    }
 //
 //    // UPDATE
