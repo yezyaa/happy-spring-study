@@ -1,4 +1,4 @@
-package com.example.student;
+package com.example.yezy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
