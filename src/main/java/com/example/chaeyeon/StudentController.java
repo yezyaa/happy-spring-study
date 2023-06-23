@@ -1,4 +1,4 @@
-//package com.example.student;
+//package com.example.chaeyeon;
 //
 //import org.springframework.http.HttpStatus;
 //import org.springframework.stereotype.Controller;
