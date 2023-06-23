@@ -1,4 +1,4 @@
-//package com.example.student.dto;
+//package com.example.chaeyeon.dto;
 //
 //public class StudentDto {
 //}
