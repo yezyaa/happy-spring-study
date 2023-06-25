@@ -43,7 +43,7 @@ public class ArticleController {
     }
 
     @DeleteMapping("/{id}")
-    public ArticleDto update(@PathVariable("id") Long id, @RequestBody ArticleDto dto) {
+    public void delete(@PathVariable("id") Long id) {
         service.deleteArticle(id);
     }
 }
