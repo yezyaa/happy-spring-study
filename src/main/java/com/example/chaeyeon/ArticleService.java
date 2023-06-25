@@ -2,10 +2,9 @@
 //
 //import com.example.chaeyeon.dto.ArticleDto;
 //import com.example.chaeyeon.entity.ArticleEntity;
+//import com.example.chaeyeon.repository.ArticleRepository;
 //import lombok.RequiredArgsConstructor;
 //import org.springframework.http.HttpStatus;
-//import org.springframework.http.HttpStatusCode;
-//import org.springframework.stereotype.Repository;
 //import org.springframework.stereotype.Service;
 //import org.springframework.web.server.ResponseStatusException;
 //

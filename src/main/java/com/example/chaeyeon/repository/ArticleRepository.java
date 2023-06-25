@@ -1,4 +1,4 @@
-//package com.example.chaeyeon;
+//package com.example.chaeyeon.repository;
 //
 //import com.example.chaeyeon.entity.ArticleEntity;
 //import org.springframework.data.jpa.repository.JpaRepository;
