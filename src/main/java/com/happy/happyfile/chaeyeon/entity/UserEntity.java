@@ -1,9 +1,19 @@
 package com.happy.happyfile.chaeyeon.entity;
 
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Table
+@Table(name = "users")
 public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
+    private String username;
+    private String email;
+    private String phone;
+    private String bio;
+    private String avatar;
 }
