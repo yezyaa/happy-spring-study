@@ -1,8 +1,10 @@
 package com.example.yezy;
 
 import com.example.yezy.dto.ArticleDto;
+import com.example.yezy.entity.ArticleEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,5 +47,11 @@ public class ArticleController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
         service.deleteArticle(id);
+    }
+
+    // GET /articles/page-test
+    @GetMapping("/page-test")
+    public List<ArticleDto> readPageTest() {
+        return service.readArticlePaged();
     }
 }

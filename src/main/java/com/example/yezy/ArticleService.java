@@ -3,9 +3,15 @@ package com.example.yezy;
 import com.example.yezy.dto.ArticleDto;
 import com.example.yezy.entity.ArticleEntity;
 import com.example.yezy.repository.ArticleRepository;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -59,5 +65,13 @@ public class ArticleService {
         if (repository.existsById(id))
             repository.deleteById(id);
         else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
+    public List<ArticleDto> readArticlePaged() {
+        List<ArticleDto> articleDtoList = new ArrayList<>();
+        for (ArticleEntity entity : repository.findTop20ByOrderByIdDesc()) {
+            articleDtoList.add(ArticleDto.fromEntity(entity));
+        }
+        return articleDtoList;
     }
 }
