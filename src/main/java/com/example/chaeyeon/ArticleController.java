@@ -1,8 +1,10 @@
 //package com.example.chaeyeon;
 //
 //import com.example.chaeyeon.dto.ArticleDto;
+//import com.example.chaeyeon.entity.ArticleEntity;
 //import lombok.RequiredArgsConstructor;
 //import lombok.extern.slf4j.Slf4j;
+//import org.springframework.data.domain.Page;
 //import org.springframework.web.bind.annotation.*;
 //
 //import java.util.List;
@@ -39,5 +41,10 @@
 //    @DeleteMapping("/{id}")
 //    public void delete(@PathVariable("id") Long id) {
 //        service.deleteArticle(id);
+//    }
+//
+//    @GetMapping("/page-test")
+//    public List<ArticleDto> readPageTest() {
+//        return service.readArticlePaged();
 //    }
 //}
