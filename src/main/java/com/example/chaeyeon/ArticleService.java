@@ -4,6 +4,7 @@
 //import com.example.chaeyeon.entity.ArticleEntity;
 //import com.example.chaeyeon.repository.ArticleRepository;
 //import lombok.RequiredArgsConstructor;
+//import org.springframework.data.domain.Page;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.stereotype.Service;
 //import org.springframework.web.server.ResponseStatusException;
@@ -57,5 +58,13 @@
 //        if (repository.existsById(id)) {
 //            repository.deleteById(id);
 //        } else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//    }
+//
+//    public List<ArticleDto> readArticlePaged() {
+//        List<ArticleDto> articleDtoList = new ArrayList<>();
+//        for (ArticleEntity entity : repository.findTop20ByOrderByIdDesc()) {
+//            articleDtoList.add(ArticleDto.fromEntity(entity));
+//        }
+//        return articleDtoList;
 //    }
 //}
