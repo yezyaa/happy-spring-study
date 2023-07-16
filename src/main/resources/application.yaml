@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    default: dev
+  mvc:
+    # /static/ ?? ???? ??? ?? ?? ?? ??
+    static-path-pattern: /static/**
+  web:
+    resources:
+      # ?? ?? ?? ??
+      static-locations: file:media/,classpath:/static
+  main:
+    banner-mode: off
