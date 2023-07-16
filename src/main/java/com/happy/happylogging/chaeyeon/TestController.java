@@ -13,10 +13,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+@Slf4j
 @RestController
 public class TestController {
-    private static final Logger log
-            = LoggerFactory.getLogger(TestController.class);
+//    private static final Logger log
+//            = LoggerFactory.getLogger(TestController.class);
+
+    @Autowired
+    @Qualifier("dcn")
+    private String driverClassName;
+
+    @GetMapping("/profile")
+    public void profile() {
+        log.info(driverClassName);
+    }
 
     @GetMapping("/log")
     public void logTest() {
